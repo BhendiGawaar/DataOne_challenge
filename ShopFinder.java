@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * 
@@ -103,10 +104,11 @@ public boolean hasIndex(int index)
 	{
 		float minCost = Float.MAX_VALUE;
 		int minShopNo=-1;
-		
+		int sr;
 		//assuming that shop numbers are continous and start from 1
 		for (int shopNo=0;shopNo<ShoppingMall.size();shopNo++)//HashMap<String, ItemDetails> shopBin : ShoppingMall
 		{
+			HashSet<Integer> combos = new HashSet<Integer>();
 			//System.out.println(shopNo);
 			HashMap<String, ItemDetails> shopBin = ShoppingMall.get(shopNo);
 			//System.out.println(shopNo+" shopBin "+shopBin);
@@ -118,9 +120,13 @@ public boolean hasIndex(int index)
 				//System.out.println(i+" "+itemName+" "+shopBin.get(itemName));
 				if(shopBin.containsKey(itemName))
 				{
+					sr=shopBin.get(itemName).sr;
+					
 					//System.out.println(itemName+" "+shopBin.get(itemName).cost);
 					contains=true;
-					totalCost = totalCost+shopBin.get(itemName).cost;
+					if(!combos.contains(sr))
+						totalCost = totalCost+shopBin.get(itemName).cost;
+					combos.add(sr);
 				}
 				else
 				{
