@@ -1,6 +1,6 @@
 # DataOne_challenge
 
-<h3>Assumption:
+<h3>Assumption:</h3>
 
 Shop ID's start from 1 and are continous.
 
@@ -11,6 +11,7 @@ Program Input
     /home/vishal/workspace/DataOne/src/data.csv teddy_bear baby_powder
 
 Output
+
 	2, 11.5
 
 
@@ -21,6 +22,7 @@ Input
     /home/vishal/workspace/DataOne/src/data.csv pampers_diapers baby_soap
 
 Output
+
 	none
 
 
@@ -31,4 +33,5 @@ Input
     /home/vishal/workspace/DataOne/src/data.csv scissor bath_towel
 
 Output
+
 	6, 11.0
